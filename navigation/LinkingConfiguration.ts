@@ -20,28 +20,22 @@ const linking: LinkingOptions<RootStackParamList> = {
               LoginScreen: "login",
             },
           },
-
         },
       },
       SignUp: {
         screens: {
           SignUp: {
-            screens:{
-              SignUpScreen:"signUp",
+            screens: {
+              SignUpScreen: "signUp",
             },
           },
         },
       },
       Tasks: {
         screens: {
-          TabOne: {
+          TaskTable: {
             screens: {
-              TabOneScreen: "one",
-            },
-          },
-          TabTwo: {
-            screens: {
-              TabTwoScreen: "two",
+              TabOneScreen: "task",
             },
           },
         },

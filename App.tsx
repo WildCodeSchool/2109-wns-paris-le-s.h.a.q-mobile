@@ -47,7 +47,7 @@ export default function App() {
     return (
       <NativeBaseProvider theme={theme}>
         <SafeAreaProvider>
-          <Navigation />
+          <Navigation colorScheme={colorScheme} />
           <StatusBar />
         </SafeAreaProvider>
       </NativeBaseProvider>

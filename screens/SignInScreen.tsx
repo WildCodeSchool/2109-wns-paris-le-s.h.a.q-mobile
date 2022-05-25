@@ -1,15 +1,15 @@
 import React from "react";
 import { Center, Hidden, Image } from "native-base";
-import SignUpForm from "@components/screens/login/SignUpForm";
+import SignInForm from "@components/screens/login/SignInForm";
 import Header from "@components/screens/Header";
 import Layout from "@components/Layout";
 import Container from "@components/Container";
 
-export default function SignUp(props: any) {
+export default function SignIn(props: any) {
   return (
     <Layout>
       <Hidden from="md">
-        <Header {...props} labelText={"Sign up to continue"} />
+        <Header {...props} labelText={"Sign in to continue"} />
       </Hidden>
       <Hidden till="md">
         <Center
@@ -28,7 +28,7 @@ export default function SignUp(props: any) {
         </Center>
       </Hidden>
       <Container>
-        <SignUpForm props={props} />
+        <SignInForm props={props} />
       </Container>
     </Layout>
   );
