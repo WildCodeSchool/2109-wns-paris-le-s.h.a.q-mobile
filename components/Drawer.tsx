@@ -1,7 +1,7 @@
 import * as React from "react";
-import { DrawerContentScrollView } from "@react-navigation/drawer";
-import { Box, Divider, HStack, Pressable, Text, VStack } from "native-base";
-import { getName } from "../constants/lib";
+import {DrawerContentScrollView} from "@react-navigation/drawer";
+import {Box, Divider, HStack, Pressable, Text, VStack} from "native-base";
+import {getName} from "../constants/lib";
 
 export default function CustomDrawerContent(props) {
   return (
@@ -19,6 +19,7 @@ export default function CustomDrawerContent(props) {
           <VStack space="3">
             {props.state.routeNames.map((name: string, index: number) => (
               <Pressable
+                key={name}
                 px="5"
                 py="3"
                 rounded="md"

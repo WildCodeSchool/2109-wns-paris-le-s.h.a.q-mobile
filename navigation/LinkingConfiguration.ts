@@ -20,6 +20,15 @@ const linking: LinkingOptions<RootStackParamList> = {
               LoginScreen: "login",
             },
           },
+          Tasks: {
+            screens: {
+              TaskTable: {
+                screens: {
+                  TabOneScreen: "task",
+                },
+              },
+            },
+          },
         },
       },
       SignUp: {
@@ -31,15 +40,7 @@ const linking: LinkingOptions<RootStackParamList> = {
           },
         },
       },
-      Tasks: {
-        screens: {
-          TaskTable: {
-            screens: {
-              TabOneScreen: "task",
-            },
-          },
-        },
-      },
+
       Modal: "modal",
       NotFound: "*",
     },

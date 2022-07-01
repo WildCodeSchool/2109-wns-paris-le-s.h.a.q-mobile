@@ -1,11 +1,11 @@
 import React from "react";
-import { StatusBar } from "expo-status-bar";
-import { SafeAreaProvider } from "react-native-safe-area-context";
-import { extendTheme, NativeBaseProvider } from "native-base";
-
-import useCachedResources from "./hooks/useCachedResources";
+import {StatusBar} from "expo-status-bar";
+import {SafeAreaProvider} from "react-native-safe-area-context";
+import {extendTheme, NativeBaseProvider} from "native-base";
+import {ApolloProvider} from "@apollo/client";
 import useColorScheme from "./hooks/useColorScheme";
 import Navigation from "./navigation";
+import client from './client'
 
 const theme = extendTheme({
   colors: {
@@ -37,20 +37,19 @@ const theme = extendTheme({
   },
 });
 
-export default function App() {
-  const isLoadingComplete = useCachedResources();
-  const colorScheme = useColorScheme();
 
-  if (!isLoadingComplete) {
-    return null;
-  } else {
+
+
+export default function App() {
+  const colorScheme = useColorScheme();
     return (
-      <NativeBaseProvider theme={theme}>
-        <SafeAreaProvider>
-          <Navigation colorScheme={colorScheme} />
-          <StatusBar />
-        </SafeAreaProvider>
-      </NativeBaseProvider>
-    );
+      <ApolloProvider client={client}>
+        <NativeBaseProvider theme={theme}>
+          <SafeAreaProvider>
+            <Navigation colorScheme={colorScheme} />
+            <StatusBar />
+          </SafeAreaProvider>
+        </NativeBaseProvider>
+      </ApolloProvider>
+    )
   }
-}
